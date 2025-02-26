@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Armários</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Aluguel de Armários</h1>
+    </header>
+
+    <!-- Seção de Mensagens -->
+    <section class="mensagens">
+        <h2>Olá, Gustavo</h2>
+        <p>Você possui um armário reservado para hoje.</p>
+        <p>Atenção: Existe uma pendência no financeiro.</p>
+    </section>
+
+    <!-- Lista de Aulas -->
+    <section class="aulas">
+        <h2>Suas Aulas</h2>
+        <ul>
+            <li>Matemática - Sala 101 - 08:00</li>
+            <li>História - Sala 202 - 10:00</li>
+            <li>Física - Sala 303 - 14:00</li>
+        </ul>
+    </section>
+
+    <!-- Notícias -->
+    <section class="noticias">
+        <h2>Notícia do Dia</h2>
+        <p>As inscrições para novos armários estão abertas!</p>
+    </section>
+
+    <section class="container">
+        <h2>Reserva de Armário</h2>
+        <label for="tipoArmario">Selecione o tipo de armário:</label>
+        <select id="tipoArmario">
+            <option value="padrao">Padrão</option>
+            <option value="duplo">Duplo</option>
+        </select>
+        <button onclick="reservarArmario()">Reservar</button>
+        <p id="resultado"></p>
+    </section>
+
+</body>
+</html>
