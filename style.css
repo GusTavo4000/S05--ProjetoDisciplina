@@ -47,11 +47,19 @@ section h2 {
 }
 
 .container button {
-    background-color: #333;
+    background-color: #504e4e;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
+.container select {
+    padding: 9px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color:whitesmoke;
+    color:black;
+    cursor: pointer;
+}
