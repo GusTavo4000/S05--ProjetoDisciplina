@@ -3,13 +3,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Arimo', sans-serif;  
 }
 
 /* Estilo para o cabeçalho */
 header {
-    background-color: #333;
-    color: white;
+    background-color: var(--header-background);
+    color: var(--header-text);
     padding: 10px 0;
     text-align: center;
 }
@@ -18,14 +20,18 @@ header {
 section {
     margin: 20px;
     padding: 20px;
-    background-color: white;
+    background-color: var(--section-background);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(35, 25, 82, 0.1);
 }
 
 /* Estilo para os títulos das seções */
 section h2 {
-    color: #333;
+    color: var(--text-color);
+}
+
+section h3 {
+    color: var(--text-color);
 }
 
 /* Estilo para a lista de aulas */
@@ -35,7 +41,7 @@ section h2 {
 }
 
 .aulas li {
-    background-color: #e2e2e2;
+    background-color: var(--background-color);
     margin: 5px 0;
     padding: 10px;
     border-radius: 3px;
@@ -46,20 +52,102 @@ section h2 {
     font-style: italic;
 }
 
+/* Estilo para os botões */
 .container button {
-    background-color: #504e4e;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--button-text);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
+/* Estilo para os selects */
 .container select {
     padding: 9px 20px;
     border-radius: 5px;
     border: 1px solid #ccc;
-    background-color:whitesmoke;
-    color:black;
+    background-color: var(--select-background);
+    color: var(--select-text);
     cursor: pointer;
+}
+
+/* Estilo para a logo Inatel */
+.svg_logo_inatel {
+    width: 150px;
+    height: auto; /* Mantém a proporção */
+    color: blue; /* Define a cor principal */
+}
+
+/* Tema Light */
+:root {
+    --primary-color: #3544c7; /* Azul */
+    --secondary-color: #F2F2F2; /* Cor clara para detalhes */
+    --text-color: #161313; /* Texto escuro */
+    --background-color: #FFFFFF; /* Fundo branco */
+    --header-background: #F8F9FA; /* Cor de fundo do cabeçalho */
+    --header-text: #161313; /* Cor do texto do cabeçalho */
+    --section-background: #FFFFFF; /* Fundo das seções */
+    --button-background: #3545cf; /* Azul para botões */
+    --button-text: white; /* Texto branco nos botões */
+    --select-background: whitesmoke; /* Cor de fundo para o select */
+    --select-text: black; /* Cor do texto para o select */
+}
+
+/* Tema Dark */
+[data-theme="dark"] {
+    --primary-color: #04132a; /* Azul escuro */
+    --secondary-color: #0C1526; /* Preto/azul escuro para detalhes */
+    --text-color: #FFFFFF; /* Texto branco */
+    --background-color: #232734; /* Fundo azul escuro */
+    --header-background: #061224; /* Cor de fundo do cabeçalho */
+    --header-text: white; /* Texto branco no cabeçalho */
+    --section-background: #1e212b; /* Fundo escuro nas seções */
+    --button-background: #172c49; /* Azul escuro para botões */
+    --button-text: white; /* Texto branco nos botões */
+    --select-background: #333333; /* Fundo escuro para select */
+    --select-text: white; /* Texto branco para select */
+}
+
+/* Estilo do modal (escondido por padrão) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(49, 46, 46, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+    background: darkblue;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Botões dentro do modal */
+.theme-option {
+    margin: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilizar os temas */
+.theme-option[data-theme="light"] {
+    background: #f8f9fa;
+    color: #333;
+}
+
+.theme-option[data-theme="dark"] {
+    background: var(--background-color);
+    color: var(--primary-color);
 }

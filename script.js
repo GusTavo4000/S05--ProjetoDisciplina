@@ -1,6 +1,5 @@
 // objeto do usuário
 const usuario = { nome: "Gustavo", matricula: "658", pendencia: false, acessibilidade: true };
-
 // lista de armários
 const armarios = [
   { id: 1, formato: "padrao", status: true, acessivel: false, dataReserva: null, dataEntrega: null },
@@ -50,7 +49,39 @@ function reservarArmario() {
   document.getElementById("resultado").innerText = `Olá, ${usuario.nome}! O armário ${armarioSorteado.id} foi reservado com sucesso! 
   Data de reserva: ${dataReserva.toLocaleString()} 
   A chave deverá ser entregue até: ${dataEntrega.toLocaleString()}`;
-
+  
   console.log(usuario);
   console.log(armarios);
 }
+
+const modal = document.getElementById("theme-modal");
+const openModalBtn = document.getElementById("open-theme-modal");
+const closeModalBtn = document.getElementById("close-theme-modal");
+const themeButtons = document.querySelectorAll(".theme-option");
+
+// Abrir o modal
+document.getElementById("open-theme-modal").addEventListener("click", () => {
+  document.getElementById("theme-modal").style.display = "flex";
+});
+
+// Fechar o modal
+closeModalBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Trocar o tema ao clicar em um botão
+themeButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const selectedTheme = button.getAttribute("data-theme");
+    document.documentElement.setAttribute("data-theme", selectedTheme);
+    modal.style.display = "none"; // Fecha o modal após a escolha
+  });
+});
+
+// Fechar modal ao clicar fora dele
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
