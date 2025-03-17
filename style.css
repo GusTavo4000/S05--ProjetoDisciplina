@@ -1,18 +1,17 @@
 /* Estilo para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arimo', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: 'Arimo', sans-serif;  
 }
 
 /* Estilo para o cabeçalho */
 header {
     background-color: var(--header-background);
     color: var(--header-text);
-    padding: 10px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -26,11 +25,7 @@ section {
 }
 
 /* Estilo para os títulos das seções */
-section h2 {
-    color: var(--text-color);
-}
-
-section h3 {
+section h2, section h3 {
     color: var(--text-color);
 }
 
@@ -50,16 +45,6 @@ section h3 {
 /* Estilo para a seção de notícias */
 .noticias p {
     font-style: italic;
-}
-
-/* Estilo para os botões */
-.container button {
-    background-color: var(--button-background);
-    color: var(--button-text);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
 /* Estilo para os selects */
@@ -109,7 +94,7 @@ section h3 {
     --select-text: white; /* Texto branco para select */
 }
 
-/* Estilo do modal (escondido por padrão) */
+/* Estilo do modal */
 .modal {
     display: none;
     position: fixed;
@@ -135,10 +120,11 @@ section h3 {
 /* Botões dentro do modal */
 .theme-option {
     margin: 10px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border-radius: 10px;
     cursor: pointer;
     font-size: 16px;
+    border: none;
 }
 
 /* Estilizar os temas */
@@ -150,4 +136,80 @@ section h3 {
 .theme-option[data-theme="dark"] {
     background: var(--background-color);
     color: var(--primary-color);
+}
+
+/* Estilo dos textos */
+h4, p {
+    font-family: "Arimo", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: var(--text-color);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilos do carrossel */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel {
+    display: flex; /* Agora os itens do carrossel serão flexíveis */
+}
+
+.card {
+    min-width: 100%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.info {
+    padding: 10px;
+}
+
+.icon {
+    font-size: 30px; /* Tamanho do ícone */
+    color: var(--text-color); /* Cor do ícone */
+    cursor: pointer; /* Mostra que o ícone é clicável */
+    margin-left: 0 10px;
+}
+
+/* Botões de navegação do carrossel */
+.container button {
+    padding: 9px 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: var(--select-background);
+    color: var(--select-text);
+    cursor: pointer;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
 }

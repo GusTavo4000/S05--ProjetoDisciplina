@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aluguel de Armários</title>
@@ -28,9 +32,23 @@
           ></path>
         </svg>
       </h1>
-      <div align="left">
-        <button id="open-theme-modal">Escolher Tema</button>
+
+      <element class="icon">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+        "
+      >
+        <div>
+          <i id="menu-icon" class="fas fa-bars"></i>
+        </div>
+        <div>
+          <i class="fas fa-user"></i>
+        </div>
       </div>
+    </element>
+      
     </header>
 
     <!-- Modal de escolha de tema -->
@@ -81,5 +99,41 @@
       <button onclick="reservarArmario()">Reservar</button>
       <p id="resultado"></p>
     </section>
+
+    <section class="container">
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- Os cards deverão ser inseridos dinamicamente via JS -->
+        </div>
+        <button id="prevBtn">❮</button>
+        <button id="nextBtn">❯</button>
+      </div>
+      <div align="center">
+        <!-- Container onde os eventos serão inseridos -->
+        <div id="eventos-container"></div>
+      </div>
+    </section>
+
+    <script>
+      // Obtendo o container
+      const container = document.getElementById("eventos-container");
+
+      // Criando o HTML dinamicamente
+      container.innerHTML = `
+        <section class="container">
+          <img src="${event.image}" alt="${event.title}" />
+          <div class="info">
+            <h3>${event.title}</h3>
+            <p>${event.description}</p>
+            <p>
+              <span class="material-symbols-outlined icon">event</span> ${event.date}
+              às ${event.time}
+              <span class="material-symbols-outlined icon">pin_drop</span>
+              ${event.location}
+            </p>
+          </div>
+        </section>
+      `;
+    </script>
   </body>
 </html>
